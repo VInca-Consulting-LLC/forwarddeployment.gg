@@ -7,7 +7,7 @@
 }
 *{box-sizing:border-box}
 html{background:#3f4822}
-body{margin:0;min-height:100vh;color:#fff;font:600 17px/1.55 "Fredoka","Baloo 2",ui-rounded,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+body{margin:0;min-height:100vh;color:#fff;font:500 17px/1.55 "Fredoka","Baloo 2",ui-rounded,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
   background:radial-gradient(120% 70% at 50% 0%,#8a9550 0%,#5f6a33 50%,#3f4822 100%) fixed;
   box-shadow:inset 0 0 120px 10px rgba(30,34,48,.35)}
 a{color:#ffe680}
@@ -27,33 +27,33 @@ a{color:#ffe680}
 
 /* header */
 header.top{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px 0}
-header.top a.brand{color:#fff;text-decoration:none;font-weight:700;font-size:19px;text-shadow:var(--olt-sm)}
+header.top a.brand{color:#fff;text-decoration:none;font-weight:600;font-size:19px;text-shadow:var(--olt-sm)}
 nav{display:flex;gap:10px}
-nav a{display:inline-flex;align-items:center;min-height:40px;padding:0 14px;border-radius:12px;color:#fff;text-decoration:none;font-weight:700;font-size:15px;text-shadow:var(--olt-sm);--lip:0 3px 0 var(--ink);--gb:8px;--gs:2px}
+nav a{display:inline-flex;align-items:center;min-height:40px;padding:0 14px;border-radius:12px;color:#fff;text-decoration:none;font-weight:500;font-size:15px;text-shadow:var(--olt-sm);--lip:0 3px 0 var(--ink);--gb:8px;--gs:2px}
 nav a:hover{filter:brightness(1.08)}
 
 /* hero */
 .hero{text-align:center;padding:28px 0 20px}
 .hero img.logo{width:min(520px,92%);height:auto;filter:drop-shadow(0 10px 16px rgba(30,34,48,.45))}
-.hero p{font-size:clamp(18px,2.6vw,22px);font-weight:600;line-height:1.45;max-width:640px;margin:14px auto 26px;color:#fff;text-shadow:var(--olt)}
+.hero p{font-size:clamp(18px,2.6vw,22px);font-weight:500;line-height:1.45;max-width:640px;margin:14px auto 26px;color:#fff;text-shadow:var(--olt)}
 .badges{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
-.badge{display:inline-flex;align-items:center;min-height:52px;padding:0 22px;border-radius:14px;color:#fff;font-weight:700;font-size:17px;text-decoration:none;text-shadow:var(--olt-sm);--sh:78% 72% at 50% 36%}
+.badge{display:inline-flex;align-items:center;min-height:52px;padding:0 22px;border-radius:14px;color:#fff;font-weight:500;font-size:17px;letter-spacing:.01em;text-decoration:none;text-shadow:var(--olt-sm);--sh:78% 72% at 50% 36%}
 
 /* feature tiles */
 .features{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin:36px 0 44px}
 .features div{border-radius:16px;padding:18px 18px 20px;--sh:90% 80% at 50% 20%}
-.features h3{margin:0 0 8px;font-size:21px;font-weight:700;line-height:1.15;color:#fff;text-shadow:var(--olt)}
-.features p{margin:0;font-size:15.5px;font-weight:600;color:#eef2fa;text-shadow:0 1px 0 rgba(30,34,48,.6)}
+.features h3{margin:0 0 8px;font-size:21px;font-weight:600;line-height:1.15;color:#fff;text-shadow:var(--olt)}
+.features p{margin:0;font-size:15.5px;font-weight:400;color:#eef2fa;text-shadow:0 1px 0 rgba(30,34,48,.6)}
 
 /* document pages (privacy / support): a cream glow panel so long text stays easy to read */
 .doc{border-radius:18px;padding:26px 26px 30px;margin:20px 0 44px;color:var(--ink);--sh:120% 90% at 50% 0%;--gb:18px;--gs:6px}
-.doc h1{margin:0 0 6px;font-size:32px;line-height:1.1;color:#fff;text-shadow:var(--olt)}
-.doc h2{font-size:20px;margin:1.6em 0 .4em;color:#4a5530}
-.doc p,.doc li{font-weight:500;font-size:16.5px}
+.doc h1{margin:0 0 6px;font-size:32px;font-weight:600;line-height:1.1;color:#fff;text-shadow:var(--olt)}
+.doc h2{font-size:20px;font-weight:600;margin:1.6em 0 .4em;color:#4a5530}
+.doc p,.doc li{font-weight:400;font-size:16.5px}
 .doc a{color:#1b55c6}
 .muted{opacity:.7}
 
-footer{border-top:2px solid rgba(30,34,48,.35);padding:20px 0 40px;color:#eef0cf;font-size:14px;font-weight:600;text-shadow:0 1px 0 rgba(30,34,48,.6)}
+footer{border-top:2px solid rgba(30,34,48,.35);padding:20px 0 40px;color:#eef0cf;font-size:14px;font-weight:400;text-shadow:0 1px 0 rgba(30,34,48,.6)}
 footer a{color:#eef0cf}
 
 @media (max-width:520px){
