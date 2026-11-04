@@ -16,6 +16,7 @@ a{color:#ffe680}
 /* glow families */
 .f-olive{--c0:#a3ad66;--c1:#8a9550;--c2:#5f6a33;--c3:#3f4822;--rim:rgba(247,246,216,.55);--in:rgba(230,232,170,.25)}
 .f-slate{--c0:#b0c0dc;--c1:#8b9fc2;--c2:#6c80a6;--c3:#4a5c80;--rim:#c3d1ea;--in:rgba(200,214,240,.55)}
+.f-slatedeep{--c0:#7f93b8;--c1:#5d7198;--c2:#3f5176;--c3:#29354f;--rim:rgba(195,209,234,.6);--in:rgba(150,172,214,.28)}
 .f-bronze{--c0:#ffd9a8;--c1:#e8a964;--c2:#c27a3a;--c3:#8a4f1e;--rim:#ffe2bd;--in:rgba(255,215,170,.55)}
 .f-gold{--c0:#fffbe2;--c1:#ffe680;--c2:#ffc93c;--c3:#e39812;--rim:#fff6c6;--in:rgba(255,246,200,.9)}
 .f-cream{--c0:#fff;--c1:#fffbf3;--c2:#f8eedb;--c3:#e9d7b1;--rim:#fff;--in:rgba(255,255,255,.95)}
@@ -41,7 +42,7 @@ nav a:hover{filter:brightness(1.08)}
 
 /* feature tiles */
 .features{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin:36px 0 44px}
-.features div{border-radius:16px;padding:18px 18px 20px;--sh:90% 80% at 50% 20%}
+.features div{border-radius:16px;padding:18px 18px 20px;--sh:110% 70% at 50% 0%}
 .features h3{margin:0 0 8px;font-size:21px;font-weight:600;line-height:1.15;color:#fff;text-shadow:var(--olt)}
 .features p{margin:0;font-size:15.5px;font-weight:400;color:#eef2fa;text-shadow:0 1px 0 rgba(30,34,48,.6)}
 
