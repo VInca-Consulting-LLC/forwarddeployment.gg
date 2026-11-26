@@ -13,7 +13,10 @@
   var m = /^\/i\/([A-Za-z0-9]{6,12})\/?$/.exec(location.pathname) || /[?&]c=([A-Za-z0-9]{6,12})/.exec(location.search);
   var code = m ? m[1].toUpperCase() : '';
   var $ = function (id) { return document.getElementById(id); };
-  var link = code ? HOST + '/i/' + code : HOST + '/';
+  // "Turns" (async) invites carry ?m=t: keep it in every link this page builds (the app reads the code as an async match id only with it)
+  var marker = /[?&]m=t(?:[&#]|$)/i.test(location.search) ? '?m=t' : '';
+  var link = code ? HOST + '/i/' + code + marker : HOST + '/';
+  var SCHEME = 'fwddeploy'; // the app's own URL scheme (native/setup.mjs registers it; src/net/invites.js parses fwddeploy://i/<code>[?m=t])
 
   function copy(text) {
     function legacy() {
@@ -50,10 +53,25 @@
   wire('ios', APP_STORE_URL); wire('android', PLAY_STORE_URL);
   var open = $('open');
   if (open) {
-    var isAndroid = /Android/i.test(navigator.userAgent);
-    // Android: an intent URL opens the installed app (or the Play listing). iOS/desktop: the https link itself; with the app installed iOS hands it to the app.
-    open.href = isAndroid ? 'intent://forwarddeployment.gg/i/' + code + '#Intent;scheme=https;package=' + ANDROID_PACKAGE + ';' + (PLAY_STORE_URL ? 'S.browser_fallback_url=' + encodeURIComponent(PLAY_STORE_URL) + ';' : '') + 'end' : link;
-    open.addEventListener('click', function () { copy(link).then(note); });
+    var ua = navigator.userAgent || '';
+    var isAndroid = /Android/i.test(ua);
+    var isIOS = /iPhone|iPad|iPod/i.test(ua) || (/Macintosh/i.test(ua) && navigator.maxTouchPoints > 1); // iPadOS reports a Mac user agent
+    // Android: an intent URL opens the installed app with the https link (query kept) or falls back to the Play listing.
+    // iOS: Safari never hands a same-domain https link to the app (universal links only fire from another domain / app), so use the app's URL scheme;
+    //      without the app Safari shows an error, so after a moment the page explains and offers the store.
+    // Desktop: the https link itself.
+    open.href = isAndroid ? 'intent://forwarddeployment.gg/i/' + code + marker + '#Intent;scheme=https;package=' + ANDROID_PACKAGE + ';' + (PLAY_STORE_URL ? 'S.browser_fallback_url=' + encodeURIComponent(PLAY_STORE_URL) + ';' : '') + 'end'
+      : isIOS ? SCHEME + '://i/' + code + marker : link;
+    open.addEventListener('click', function () {
+      copy(link).then(note);
+      if (!isIOS) return;
+      var left = false, mark = function () { left = true; };
+      document.addEventListener('visibilitychange', mark, { once: true }); window.addEventListener('pagehide', mark, { once: true });
+      setTimeout(function () {
+        if (left || document.hidden) return;
+        var n = $('copied'); if (n) { n.textContent = 'If the game did not open, install it first (App Store above), then open it, tap Play online, then New game, and paste the invite (already copied).'; n.hidden = false; }
+      }, 1800);
+    });
   }
   var both = $('copy'); if (both) both.addEventListener('click', function () { copy(link).then(note); });
 
