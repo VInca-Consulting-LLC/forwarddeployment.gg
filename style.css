@@ -54,6 +54,18 @@ nav a:hover{filter:brightness(1.08)}
 .doc a{color:#1b55c6}
 .muted{opacity:.7}
 
+/* invite landing (/i/<code>, 404.html) */
+.invite{text-align:center;padding:24px 0 32px}
+.invite img.logo{width:min(360px,80%);height:auto;filter:drop-shadow(0 10px 16px rgba(30,34,48,.45))}
+.invite h1{margin:18px 0 6px;font-size:clamp(28px,6vw,40px);font-weight:600;line-height:1.1;color:#fff;text-shadow:var(--olt)}
+.invite>p,.invite #actions>p{max-width:520px;margin:10px auto;font-weight:500;color:#fff;text-shadow:var(--olt-sm)}
+.invite .badges{margin:22px 0 14px}
+.invite .open{display:inline-flex;min-height:56px;padding:0 30px;border-radius:14px;color:var(--ink);font-weight:600;font-size:19px;text-decoration:none;text-shadow:none}
+.invite .copylink{display:block;margin:16px auto 0;background:none;border:0;color:#ffe680;font:inherit;text-decoration:underline;cursor:pointer;min-height:44px}
+.invite .copied{font-size:15px}
+.invite .small{font-size:13px;margin-top:18px}
+.invite a[data-todo]{filter:saturate(.6)}
+
 footer{border-top:2px solid rgba(30,34,48,.35);padding:20px 0 40px;color:#eef0cf;font-size:14px;font-weight:400;text-shadow:0 1px 0 rgba(30,34,48,.6)}
 footer a{color:#eef0cf}
 

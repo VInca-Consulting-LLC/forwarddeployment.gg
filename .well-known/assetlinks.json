@@ -1,0 +1,14 @@
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.vincaconsult.fwddeployment",
+      "sha256_cert_fingerprints": [
+        "41:79:A5:13:AB:BA:6B:F4:F9:13:AA:08:6E:26:2A:C8:E3:05:EA:F0:AE:DD:50:19:CF:89:57:FD:50:32:6A:FD"
+      ]
+    }
+  }
+]

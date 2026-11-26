@@ -1,0 +1,16 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appIDs": [
+          "PFRS738HU5.com.vincaconsult.fwddeployment",
+          "PFRS738HU5.com.vincaconsult.forwarddeployment.dev"
+        ],
+        "components": [
+          { "/": "/i/*" }
+        ]
+      }
+    ]
+  }
+}

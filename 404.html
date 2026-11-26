@@ -1,0 +1,42 @@
+<!doctype html>
+<!-- GitHub Pages serves this file for every missing path, including /i/<code> (the invite landing: /i/invite.js reads the path). Same markup as /i/index.html. -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Page not found · Forward Deployment</title>
+<link rel="icon" href="/img/icon.png">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css?v=6">
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <a class="brand" href="/">Forward Deployment</a>
+    <nav><a class="gl f-slate" href="/support.html">Support</a><a class="gl f-slate" href="/privacy.html">Privacy</a></nav>
+  </header>
+  <main class="invite">
+    <img class="logo" src="/img/logo.svg" alt="Forward Deployment">
+    <h1 id="who">A friend challenged you</h1>
+    <p id="sub">Join the match in Forward Deployment, the toy-army auto battler. Get the game, then open this invite.</p>
+    <div id="actions">
+      <div class="badges">
+        <!-- TODO: set APP_STORE_URL / PLAY_STORE_URL at the top of /i/invite.js; until then the buttons only copy the invite link -->
+        <a id="ios" class="badge gl f-bronze" href="#" data-todo="TODO: App Store URL">Download on the App Store</a>
+        <a id="android" class="badge gl f-bronze" href="#" data-todo="TODO: Google Play URL">Get it on Google Play</a>
+      </div>
+      <a id="open" class="badge gl f-gold open" href="/">Open in the app</a>
+      <button id="copy" class="copylink" type="button">Copy invite link</button>
+      <p id="copied" class="copied" role="status" hidden></p>
+      <p class="muted small">Invite <span id="code"></span></p>
+    </div>
+  </main>
+  <footer>
+    © 2026 Vinca Consulting LLC. Forward Deployment is published by Vinca Consulting LLC.
+    · <a href="/privacy.html">Privacy Policy</a> · <a href="/support.html">Support</a>
+  </footer>
+</div>
+<script src="/i/invite.js"></script>
+</body>
+</html>
